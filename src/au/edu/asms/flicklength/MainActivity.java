@@ -99,7 +99,30 @@ public class MainActivity extends Activity implements SensorEventListener{
 
 //			 Set an array of numbers to the accelerometer values ([0] for x, [1] for y and [2] for z) 
 			  float[] values = event.values;
+			  
+//				set the red colour intensity (0-255) mapped over a scale
+//				from -10m/s/s to 10m/s/s for x-axis acceleration
+				int red = Math.round((values[0]*(255/20)+127));
+				
+//				ensure than red is within the legal range of 0-255				
+				if (red>255){
+					red=255;
+				}
+				if (red<0){
+					red=0;
+				}
 
+//				set the green colour intensity (0-255) mapped over a scale
+//				from -10m/s/s to 10m/s/s for y-axis acceleration
+				int green = Math.round((values[1]*(255/20)+127));
+				
+//				ensure than green is within the legal range of 0-255				
+				if (green>255){
+					green=255;
+				}
+				if (green<0){
+					green=0;
+				}
 //				set the blue colour intensity (0-255) mapped over a scale
 //				from -10m/s/s to 10m/s/s for z-xis acceleration
 				int blue = Math.round((values[2]*(255/20)+127));
@@ -113,7 +136,7 @@ public class MainActivity extends Activity implements SensorEventListener{
 				}
 				
 //				set background colour according to z-axis acceleration (leave red and green channels at 0
-				view.setBackgroundColor(Color.argb(255, 0, 0, blue));
+				view.setBackgroundColor(Color.argb(255, red, green, blue));
 				
 //				calculate total acceleration
 			    double totalA = Math.pow((values[0] * values[0] + values[1] * values[1] + values[2] * values[2]),0.5);

@@ -16,6 +16,6 @@
         android:layout_height="wrap_content"
         android:text="@string/totalAcceleration"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:visibility="visible" />
+        android:visibility="invisible" />
 
 </RelativeLayout>
