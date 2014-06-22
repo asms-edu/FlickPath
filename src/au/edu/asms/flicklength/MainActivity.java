@@ -102,7 +102,7 @@ public class MainActivity extends Activity implements SensorEventListener{
 			  
 //				set the red colour intensity (0-255) mapped over a scale
 //				from -10m/s/s to 10m/s/s for x-axis acceleration
-				int red = Math.round((values[0]*(255/20)+127));
+				int red = Math.round((values[0]*(255/11)+127));
 				
 //				ensure than red is within the legal range of 0-255				
 				if (red>255){
@@ -114,7 +114,7 @@ public class MainActivity extends Activity implements SensorEventListener{
 
 //				set the green colour intensity (0-255) mapped over a scale
 //				from -10m/s/s to 10m/s/s for y-axis acceleration
-				int green = Math.round((values[1]*(255/20)+127));
+				int green = Math.round((values[1]*(255/11)+127));
 				
 //				ensure than green is within the legal range of 0-255				
 				if (green>255){
@@ -125,7 +125,7 @@ public class MainActivity extends Activity implements SensorEventListener{
 				}
 //				set the blue colour intensity (0-255) mapped over a scale
 //				from -10m/s/s to 10m/s/s for z-xis acceleration
-				int blue = Math.round((values[2]*(255/20)+127));
+				int blue = Math.round((values[2]*(255/11)+127));
 				
 //				ensure than blue is within the legal range of 0-255				
 				if (blue>255){
